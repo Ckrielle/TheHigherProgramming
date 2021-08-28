@@ -82,6 +82,13 @@ class GreatestCommonDivisor:
 		if b == 0: return a
 		else: return self.gcd6(b, a % b)
 
+    def gcd7(self, a: int, b: int) -> int:
+            if a == 0: return b
+            elif b == 0: return a
+            elif a == b: return a
+            elif a > b: return self.gcd7(a - b, b)
+            else: return self.gcd7(a, b - a)
+
 
 if __name__ == "__main__":
 	print("Give two numbers")
